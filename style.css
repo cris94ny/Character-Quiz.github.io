@@ -1,0 +1,101 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#question1{
+  border:3px dashed black;
+  background-image:url("back.png");
+  background-repeat:no-repeat;
+  width:50%;
+  display:none;
+}
+
+#question2{
+  display:none;
+}
+
+h1{
+  font-family:'menu';
+}
+
+#results{
+  display:none;
+}
+
+h3{
+  background-color:rgba(217,35,35,0.4);
+  color:white;
+  font-family:'expose';
+  font-size:30px;
+}
+
+h4{
+  font-family:'expose';
+}
+
+button{
+  font-family:'p5 hatty';
+}
+
+input{
+  font-family:'p5 hatty';
+}
+
+h2{
+  font-family:'happy wheels';
+}
+
+#disclaimer{
+  font-family:'hot wheels';
+  font-size:10px;
+}
+
+#home{
+  border:3px dashed black;
+  width:55%
+}
+
+#restart{
+  display:none;
+}
+
+#ryuji{
+  display:none;
+  width:30%;
+}
+
+#ann{
+  display:none;
+  width:30%;
+}
+
+#morgana{
+  display:none;
+  width:30%;
+}
+
+#joker{
+  display:none;
+  width:30%;
+}
+
+@font-face{
+  font-family:'p5 hatty';
+  src:url('persona-5-font/p5hatty.ttf');
+}
+
+@font-face{
+  font-family:'expose';
+  src:url(persona-5-font/persona-5-expose/Expose-Regular.otf);
+}
+
+@font-face{
+  font-family:'menu';
+  src:url(persona-5-font/persona-5-menu-font-prototype/Persona5MenuFontPrototype-Regular.ttf);
+}
+
+@font-face{
+  font-family:'hot wheels';
+  src:url(persona-5-font/hot-wheels/HEAVYHEA.TTF);
+}

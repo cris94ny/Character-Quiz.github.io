@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <center>
+  <script>
+    console.log("ready11");
+    var score = 0;
+    document.getElementById('results').style.display = "none";
+    function startButton(){
+      document.getElementById("home").style.display = "none";
+      document.getElementById("question1").style.display = "block";
+    }
+    
+    function nextQuestion(){
+      document.getElementById("question2").style.display = "block";
+    }
+    function resultButton(){
+      score += 1
+      var result = 0;
+      var game = document.getElementById("print");
+      var number = document.getElementById("int");
+      document.getElementById('score').innerHTML = "You have taken this test " +  score +  " times";
+      document.getElementById('restart').style.display = "block";
+      document.getElementById('results').style.display = "block";
+      if (game.value == "stealth"){
+        result = result + 1;
+      } else if (game.value == "assault"){
+        result = result + 2;
+      } else{
+        result = result - 1;
+      }
+      result = result + parseInt(number.value);
+      console.log(result);
+      if (isNaN(result)){
+        console.log("cringe")
+        document.getElementById("null").innerHTML = "You are...";
+        document.getElementById("answer").innerHTML = "No one!";
+      }
+      if (result >= 0 && result <= 4){
+        console.log("Joker")
+        document.getElementById("answer").innerHTML = "You are Joker!";
+        document.getElementById("joker").style.display = "block";
+      } else if (result >= 5 && result <= 8){
+        console.log("Ann")
+        document.getElementById("answer").innerHTML = "You are Ann!";
+        document.getElementById("ann").style.display = "block";
+      } else if (result >= 9 && result <= 11){
+        console.log("Morgana")
+        document.getElementById("answer").innerHTML = "You are Morgana!";
+        document.getElementById("morgana").style.display = "block";
+      } else if (result == 12){
+        console.log("Ryuji")
+        document.getElementById("answer").innerHTML = "You are Ryuji!";
+        document.getElementById("ryuji").style.display = "block";
+      }
+    }
+    function restartButton(){
+      document.getElementById("restart").style.display = "none";
+      document.getElementById("home").style.display = "block";
+      document.getElementById("question1").style.display = "none";
+      document.getElementById("question2").style.display = "none";
+      document.getElementById("null").innerHTML = "";
+      document.getElementById("answer").innerHTML = "";
+      document.getElementById("print").value = "";
+      document.getElementById("int").value = "";
+      document.getElementById('results').style.display = "none";
+      document.getElementById("joker").style.display = "none";
+      document.getElementById("ann").style.display = "none";
+      document.getElementById("morgana").style.display = "none";
+      document.getElementById("ryuji").style.display = "none";
+    }
+  </script>
+    <div id="home">
+    <h1>Which Phantom Thief are you?</h1>
+    <img src="phantom.jpeg"><br>
+    <button type="button" onClick="startButton()">Start</button>
+      <br><br><br>
+      <p id="disclaimer">Disclaimer, this quiz will not make you a phantom thief</p>
+    </div>
+    <div id="question1">
+      <h3>How do you play heist missions? (stealth or assault)</h3>
+      <input placeholder="testing" id="print"></input>
+      <button type="button" onClick="nextQuestion()">Next</button>
+      <div id="question2">
+        <h3>How likely are you to act on your emotions? (0 is not very likely and 10 is very likely)</h3>
+        <input type="number" id="int" min="0" max="10" placeholder="testing"></input>
+        <br>
+        <button type="button" onClick="resultButton()">Results</button>
+      </div>
+    </div>
+    <div id="results">
+      <h1 id="null"></h1>
+      <h1 id="answer"></h1>
+      <h4 id="score"></h4><button onClick="restartButton()" id="restart">restart</button>
+      <img src="ann.jpeg" id="ann">
+      <img src="jonker.jpeg" id="joker">
+      <img src="morgana.jpeg" id="morgana">
+      <img src="ryuji.jpg" id="ryuji">
+    </div>
+    
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+    
+</body>
+</html>
